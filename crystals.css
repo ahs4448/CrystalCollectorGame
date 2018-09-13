@@ -1,0 +1,44 @@
+
+
+.crystals{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.crystal{
+	border:3px solid gold;
+	margin: 10px;
+	border-radius: 10px;
+	height:200px;
+	width:200px;
+}
+
+.crystal:hover{
+	cursor: pointer;
+}
+
+
+img{
+	width: 100px;
+}
+
+body {
+	color: black;
+	text-shadow: 
+	yellow 0px 0px 2px;
+	font-size: 34px;
+	background-image: url(wpaper2.jpg);
+	background-position: 50% 155%; 
+	background-size: 1326px;
+	font-family: "Berkshire Swash";
+	padding-bottom: 34px;
+}
+
+h1{
+	text-align: center;
+	color: black;
+	text-shadow: 
+	 white 0px 0px 9px;
+}
+
