@@ -4,22 +4,17 @@ var lost = 0;
 var win = 0;
 var previous = 0;
 
-//$(".crystal").attr("class", "red");
-
 
 randomNumber = Math.floor(Math.random() *  69 ) + 30;
 
 
 var startGame = function (){
 
-	$(".crystals").empty();
-
+$(".crystals").empty();
 
 var images = ['https://p.luckyretail.com/Uploadfile/20160530/002464/002464.jpg', "https://www.londonde.com/wp-content/uploads/163ct_3-416x351.jpg", "https://www.christies.com/media-library/images/features/articles/2015/09/29/diamonds/mainimage.jpg","http://www.infomala.com/en/wp-content/uploads/sites/2/2016/09/Diamond.jpg",];
 
-
-
-  randomNumber = Math.floor(Math.random() * 69) + 30;
+randomNumber = Math.floor(Math.random() * 69) + 30;
 
 
 $("#result").html("Random Result:  " + randomNumber);
@@ -45,81 +40,40 @@ crystal.html(random);
 
 $(".crystals").append(crystal);
 
-
 }
  $("#previous").html("Total Score: " + previous);
 
 }
 
 
- 
-
-
 startGame();
 
 
-// var reset = function () {
+   $(document).on("click", ".crystal", function() {
 
-
-// }
-
-
-
-
-
-
-
-$(document).on("click", ".crystal", function() {
-
-
-	
-
-	var num = parseInt($(this).attr("data-random"));
-
-    //var result = num + 5;
-
-    //console.log(result);
-
+      var num = parseInt($(this).attr("data-random"));
       previous += num;
 
-
    $("#previous").html("Total Score: " + previous);
-
 
       console.log(previous);
 
 if(previous > randomNumber){
-	 lost++;
-	 $("#lost").html("Losses: " + lost);
-
-
-
+     lost++;
+     $("#lost").html("Losses: " + lost);
      previous = 0;
 
-
-
      startGame();
-
-
-
 }
 else if(previous === randomNumber){
 	win++;
-
-
    $("#win").html("Wins: " + win);
 
  // $("#previous").html(previous);
 
-
-previous = 0;
-
-
+   previous = 0;
    startGame();
-
-}
-
-      //console.log(previous);
+ }
 });
 // a game with 4 crystals and a random result
 //Every crystal needs to have a random number between 1 - 12
